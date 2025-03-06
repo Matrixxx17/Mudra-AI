@@ -5,7 +5,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
+import HomeScreen from "../app/screen/homescreen";
+import QuizScreen from "./(tabs)/Quiz";
+import ResultScreen from "./screen/ResultScreen";
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -30,11 +32,17 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)_backup" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false  }} />
         <Stack.Screen name="index" options={{ headerShown: false  }} />
         <Stack.Screen name="LessonScreen" options={{ headerShown: false  }} />
         <Stack.Screen name="RecordScreen" options={{ headerShown: false  }} />
+        <Stack.Screen name="screen/communicate" options={{ headerShown: false  }} />
+        <Stack.Screen name="screen/homescreen" options={{ headerShown: false  }}/>
+        <Stack.Screen name="(tabs)/Quiz" options={{ headerShown: false  }} />
+        <Stack.Screen name="screen/ResultScreen" options={{ headerShown: false  }} />
+        
+        
       
 
         <Stack.Screen name="+not-found" />

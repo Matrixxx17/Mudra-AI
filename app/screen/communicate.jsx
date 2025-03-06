@@ -9,7 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router'; // Updated import
 
 const Timeline = ({ text }) => (
   <View style={styles.timelineRow}>
@@ -24,18 +24,18 @@ const Timeline = ({ text }) => (
 );
 
 const SignLanguageTranslator = () => {
-  const navigation = useNavigation();
+  const router = useRouter(); // Updated from useNavigation()
 
-  useEffect(() => {
-    navigation.setOptions({ headerShown: false });
-  }, [navigation]);
+  // useEffect(() => {
+  //   router.setOptions({ headerShown: false });
+  // }, [router]);
 
   return (
     <SafeAreaView style={styles.container}>
-    <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
+      <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("(tabs)/home")}>
-        <Icon name="arrow-back" size={28} color="#111418" />
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+          <Icon name="arrow-back" size={32} color="#111418" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Communicate</Text>
         <View style={styles.headerSpace} />
@@ -46,18 +46,16 @@ const SignLanguageTranslator = () => {
 
       {/* Timeline */}
       <View style={styles.timeline}>
-        <Timeline text="Take a video of the person signing" />
-        <Timeline text="AI processes the video and translates it to text" />
-        <Timeline text="Text is displayed on the screen" />
-        <Timeline text="You can listen to the text" />
+        <Timeline text="Hold your phone upright and steady, facing the person." />
+        <Timeline text="Start recording their hand gestures." />
+        <Timeline text="AI translates gestures into text in real time." />
+        <Timeline text="Get subtitles & voice output for easy understanding." />
       </View>
 
       {/* Video Preview */}
       <View style={styles.videoContainer}>
         <TouchableOpacity style={styles.playButton}>
-       
-<Icon name="play-arrow" size={24} color="white" />
-
+          <Icon name="play-arrow" size={24} color="white" />
         </TouchableOpacity>
       </View>
 
@@ -70,14 +68,17 @@ const SignLanguageTranslator = () => {
             placeholderTextColor="#637588"
           />
           <TouchableOpacity style={styles.speakerButton}>
-          <Icon name="volume-up" size={24} color="#637588" />
+            <Icon name="volume-up" size={24} color="#637588" />
           </TouchableOpacity>
         </View>
       </View>
 
       {/* Capture Button */}
       <View style={styles.captureButtonContainer}>
-        <TouchableOpacity style={styles.captureButton} onPress={() => navigation.navigate("RecordScreen")}>
+        <TouchableOpacity
+          style={styles.captureButton}
+          onPress={() => router.push("/RecordScreen")} // Updated navigation
+        >
           <Text style={styles.captureButtonText}>Turn speech to text</Text>
         </TouchableOpacity>
       </View>
@@ -94,6 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
+    top: 20,
     paddingBottom: 8,
   },
   backButton: {
@@ -108,12 +110,12 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '700',
     color: '#111418',
-    
   },
   headerSpace: {
     width: 48,
   },
   title: {
+    top: 10,
     fontSize: 22,
     fontWeight: '700',
     color: '#111418',
@@ -123,14 +125,17 @@ const styles = StyleSheet.create({
   },
   timeline: {
     paddingHorizontal: 16,
+    top: 10,
   },
   timelineRow: {
     flexDirection: 'row',
     marginBottom: 20,
+    top: 10,
   },
   timelineLeft: {
     width: 40,
     alignItems: 'center',
+    
   },
   dot: {
     width: 8,
