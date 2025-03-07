@@ -19,7 +19,7 @@ export default function HomeScreen() {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.moduleBox}
-            onPress={() => navigation.navigate("QuizScreen", { moduleId: item.id, setId: 1 })}
+            onPress={() => navigation.navigate("screen/QuizScreen", { moduleId: item.id, setId: 1 })}
           >
             <Text style={styles.moduleText}>{item.title}</Text>
           </TouchableOpacity>
