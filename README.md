@@ -1,55 +1,66 @@
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+# Mudra AI
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Mudra AI Banner](your-image-url-here)
 
-## Get started
+## 🚀 About Mudra AI
+Mudra AI is an AI-powered Indian Sign Language (ISL) learning app that leverages real-time gesture recognition and AI-driven feedback to provide an interactive and personalized learning experience. It aims to bridge communication gaps by offering gamified quizzes and conversational practice, empowering mute individuals and promoting ISL adoption.
 
-1. Install dependencies
+## 🔥 Proposed Solution
+We are developing a *React Native Expo* application with efficient API usage and *AI/ML integration*. The app consists of two main channels:
 
-   ```bash
+### *1️⃣ LearnEasy*
+A structured learning module designed to teach ISL through interactive content.
+
+#### *Features:*
+- 📚 *Modules:* A well-defined syllabus for ISL learning with progress tracking.
+- 📖 *Dictionary:* Search for any word, and a corresponding video will be displayed using an *in-place video iframe logic* for efficiency.
+- 📺 *YouTube API Integration:* We utilize *Google Cloud Platform* for YouTube API generation and *Playlist ID* management.
+- 🎯 *Quiz:* Tests user knowledge with a scoring system and result tracking.
+
+Feature Image:
+![LearnEasy Screenshot](your-image-url-here)
+
+### *2️⃣ Communicate*
+A real-time communication feature powered by machine learning.
+
+#### *Features:*
+- 📷 *Camera-based Sign Detection:* Uses *Holistic Mediapipe* for feature extraction and ISL gesture recognition.
+- 🔠 *Real-time Text & Voice Output:* Converts detected signs into text and speech for seamless communication.
+
+Feature Image:
+![Communicate Screenshot](your-image-url-here)
+
+## 🛠️ Tech Stack
+- *Frontend:* React Native (Expo)
+- *Backend:* Node.js, MongoDB
+- *ML Model:* Holistic Mediapipe (for sign language recognition)
+- *APIs:* Google Cloud Platform (YouTube API), UUID generation for session tracking
+
+## 🔧 Installation & Setup
+1. Clone the repository:
+   sh
+   git clone https://github.com/your-repo-url.git
+   cd MudraAI
+   
+2. Install dependencies:
+   sh
    npm install
-   ```
+   
+3. Start the Expo development server:
+   sh
+   expo start
+   
 
-2. Start the app
+## 📸 Screenshots
+Add screenshots here
 
-   ```bash
-    npx expo start
-   ```
+## 👥 Contributors
+- *Your Name* - [GitHub Profile](https://github.com/your-github)
+- *Other Contributors*
 
-In the output, you'll find options to open the app in a
+## 📄 License
+This project is licensed under the MIT License.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# Mudra-AI
-Indian Sign Language
->>>>>>> 117b62bf2017226fb5e583911d76c82c58089c3b
+Feel free to update the *image URLs, **repo link, and **contributor details* before finalizing! 🚀
