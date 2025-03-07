@@ -5,9 +5,13 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+<<<<<<< HEAD
 // import HomeScreen from "./screen/HomeScreen";
 // import QuizScreen from "./(tabs)_backup/QuizScreen";
 import ResultScreen from "./screen/ResultScreen";
+=======
+
+>>>>>>> 8bf36f11 (Initial commit)
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
