@@ -3,6 +3,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 import { HapticTab } from '@/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
@@ -47,7 +48,7 @@ export default function TabLayout() {
 
       {/* Quiz Tab - Fixed */}
       <Tabs.Screen
-        name="Quiz" // Changed from "Quiz" to "quiz" for consistency
+        name="challenge" // Changed from "Quiz" to "quiz" for consistency
         options={{
           title: 'Quiz',
           tabBarStyle: { display: 'flex' }, // Ensuring the tab remains visible
@@ -57,13 +58,25 @@ export default function TabLayout() {
 
       {/* My Profile Tab */}
       <Tabs.Screen
-        name="myprofile"
+        name="dictionary"
         options={{
-          title: 'My Profile',
+          title: 'Dictionary',
           tabBarStyle: { display: 'flex' },
-          tabBarIcon: ({ color }) => <Ionicons name="person" size={28} color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="open-book" size={28} color={color} />,
         }}
+        
       />
+ <Tabs.Screen
+  name="QuizScreen"
+  options={{
+    title: 'QuizScreen',
+    tabBarButton: () => null, // Completely hides the tab
+    tabBarStyle: { display: 'none' }, // Ensures it's not displayed
+  }}
+/>
+
+      
+      
     </Tabs>
   );
 }

@@ -5,8 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import HomeScreen from "../app/screen/homescreen";
-import QuizScreen from "./(tabs)/Quiz";
+// import HomeScreen from "./screen/HomeScreen";
+// import QuizScreen from "./(tabs)_backup/QuizScreen";
 import ResultScreen from "./screen/ResultScreen";
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -39,8 +39,9 @@ export default function RootLayout() {
         <Stack.Screen name="RecordScreen" options={{ headerShown: false  }} />
         <Stack.Screen name="screen/communicate" options={{ headerShown: false  }} />
         <Stack.Screen name="screen/homescreen" options={{ headerShown: false  }}/>
-        <Stack.Screen name="(tabs)/Quiz" options={{ headerShown: false  }} />
+        <Stack.Screen name="screen/QuizScreen" options={{ headerShown: false  }} />
         <Stack.Screen name="screen/ResultScreen" options={{ headerShown: false  }} />
+        <Stack.Screen name="(tabs)/dictionary" options={{ headerShown: false  }} />
         
         
       
@@ -51,4 +52,4 @@ export default function RootLayout() {
       <StatusBar style="auto" />
     </ThemeProvider>
   );
-} 
+}

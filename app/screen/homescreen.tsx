@@ -79,8 +79,8 @@
 
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
-import { RootStackParamList } from "../data/types";
-import { modules } from "../data/quizData"; // ✅ Import module names
+import { RootStackParamList } from "../../data/types";
+import { modules } from "../../data/quizData"; // ✅ Import module names
 
 // ✅ Fix: Explicitly type Props to include navigation
 type Props = StackScreenProps<RootStackParamList, "Home">;

@@ -3,14 +3,15 @@ import {
   Image, Dimensions, ActivityIndicator, TouchableOpacity 
 } from 'react-native';
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
-import { useRouter } from 'expo-router'; // ✅ Correct import for navigation
+import { useRouter } from 'expo-router';
+import uuid from 'react-native-uuid'; // ✅ Use react-native-uuid instead
 
 const { height, width } = Dimensions.get("window");
 
 const Index = () => {
-  const router = useRouter(); // ✅ Correct way to use router
-
+  const router = useRouter();
   const [fontsLoaded] = useFonts({
     'BeVietnamPro-Bold': require('../assets/fonts/BeVietnamPro-Bold.ttf'),
   });
@@ -18,6 +19,27 @@ const Index = () => {
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" color="#0000ff" />;
   }
+
+  // ✅ Function to generate and store UUID & send it to backend
+  const generateUUID = async () => {
+    try {
+      const uniqueID = uuid.v4(); // Generate UUID correctly
+      await AsyncStorage.setItem('userUUID', uniqueID); // Store in AsyncStorage
+
+      // ✅ Send UUID to backend for tracking
+      await fetch('http://192.168.0.123:5000/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uuid: uniqueID })
+      });
+
+      // ✅ Navigate to home screen
+      router.push('/home'); 
+      
+    } catch (error) {
+      console.error("Error storing UUID:", error);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -44,7 +66,8 @@ const Index = () => {
           </Text>
         </View>
 
-        <TouchableOpacity onPress={() => router.push('/home')}>  
+        {/* ✅ Call generateUUID when the button is clicked */}
+        <TouchableOpacity onPress={generateUUID}>  
           <View style={styles.button}>
             <Text style={styles.buttontext}>Get Started</Text>
           </View>
@@ -57,6 +80,7 @@ const Index = () => {
 
 export default Index;
 
+// 🎨 Styles for UI
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
@@ -73,7 +97,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   headerText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: "700",
     fontFamily: "BeVietnamPro-Bold",
   },
@@ -90,7 +114,7 @@ const styles = StyleSheet.create({
     width: "90%", 
   },
   middleText: {
-    fontSize: 30,
+    fontSize: 40,
     fontFamily: "BeVietnamPro-Bold",
     textAlign: "center",
     alignSelf: "center",
@@ -98,10 +122,10 @@ const styles = StyleSheet.create({
   },
   lowerText: {
     paddingVertical: 20,
-    fontSize: 18,
+    fontSize: 20,
   },
   button: {
-    marginTop: 40,
+    marginTop: 50,
     width: width * 0.75,
     height: height * 0.06,
     justifyContent: "center",

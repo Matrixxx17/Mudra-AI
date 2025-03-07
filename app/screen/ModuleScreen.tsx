@@ -1,16 +1,21 @@
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, SafeAreaView } from "react-native"
-import { modules } from "../data/quizData"
+// ModuleScreen.tsx
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, SafeAreaView } from "react-native";
+import { modules } from "../../data/quizData";
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "../../data/types"
 
-export default function ModuleScreen({ route, navigation }) {
-  const { moduleId } = route.params
-  const module = modules.find((m) => m.id === moduleId)
+type Props = StackScreenProps<RootStackParamList, "ModuleScreen">;
+
+export default function ModuleScreen({ route, navigation }: Props) {
+  const { moduleId } = route.params; // moduleId is a number
+  const module = modules.find((m) => m.id === moduleId);
 
   if (!module) {
     return (
       <View style={styles.container}>
         <Text>Module not found</Text>
       </View>
-    )
+    );
   }
 
   return (
@@ -26,9 +31,9 @@ export default function ModuleScreen({ route, navigation }) {
           <TouchableOpacity
             style={styles.setCard}
             onPress={() =>
-              navigation.navigate("Quiz", {
-                moduleId,
-                setId: item,
+              navigation.navigate("QuizScreen", {
+                moduleId: moduleId, // Pass moduleId as a number
+                setId: item, // Pass setId as a number
               })
             }
           >
@@ -39,7 +44,7 @@ export default function ModuleScreen({ route, navigation }) {
         contentContainerStyle={styles.listContainer}
       />
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -92,4 +97,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#666",
   },
-})
+});

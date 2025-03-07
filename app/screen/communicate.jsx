@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { useRouter } from 'expo-router'; // Updated import
+import { useRouter } from 'expo-router';
 
 const Timeline = ({ text }) => (
   <View style={styles.timelineRow}>
@@ -24,11 +24,7 @@ const Timeline = ({ text }) => (
 );
 
 const SignLanguageTranslator = () => {
-  const router = useRouter(); // Updated from useNavigation()
-
-  // useEffect(() => {
-  //   router.setOptions({ headerShown: false });
-  // }, [router]);
+  const router = useRouter(); 
 
   return (
     <SafeAreaView style={styles.container}>
@@ -77,9 +73,9 @@ const SignLanguageTranslator = () => {
       <View style={styles.captureButtonContainer}>
         <TouchableOpacity
           style={styles.captureButton}
-          onPress={() => router.push("/RecordScreen")} // Updated navigation
+          onPress={() => router.push("screen/Record")} // Updated navigation
         >
-          <Text style={styles.captureButtonText}>Turn speech to text</Text>
+          <Text style={styles.captureButtonText}>Recording Start</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -135,7 +131,6 @@ const styles = StyleSheet.create({
   timelineLeft: {
     width: 40,
     alignItems: 'center',
-    
   },
   dot: {
     width: 8,
