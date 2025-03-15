@@ -18,7 +18,12 @@ A structured learning module designed to teach ISL through interactive content.
 - 🎯 *Quiz:* Tests user knowledge with a scoring system and result tracking.
 
 Feature Image:
-![LearnEasy Screenshot](your-image-url-here)
+![LearnEasy Screenshot 1](https://github.com/Matrixxx17/Mudra-AI/blob/main/5b825cdc-e5cb-447e-ae9c-159cbd98b1e7.jpg?raw=true)
+![LearnEasy Screenshot 2](https://github.com/Matrixxx17/Mudra-AI/blob/main/d285a951-4e94-4291-8640-5e23a5ee193e.jpg?raw=true)
+![LearnEasy Screenshot 3](https://github.com/Matrixxx17/Mudra-AI/blob/main/c6c42cd8-2061-4d8f-83ed-e731c9c54871.jpg?raw=true)
+![LearnEasy Screenshot 4](https://github.com/Matrixxx17/Mudra-AI/blob/main/78e1f145-a805-42ac-9d1b-15356b63b30f.jpg?raw=true)
+![LearnEasy Screenshot 5](https://github.com/Matrixxx17/Mudra-AI/blob/main/25286f28-fa1a-4d57-9d3d-279cbcf49dec.jpg?raw=true)
+![LearnEasy Screenshot 6](https://github.com/Matrixxx17/Mudra-AI/blob/main/5cba5fbd-ce92-4ec0-b250-a514756eb826.jpg?raw=true)
 
 ### *2️⃣ Communicate*
 A real-time communication feature powered by machine learning.
