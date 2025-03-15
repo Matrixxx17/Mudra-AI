@@ -1,6 +1,6 @@
 # Mudra AI
 
-![Mudra AI Banner](your-image-url-here)
+![Mudra AI Banner](https://github.com/Matrixxx17/Mudra-AI/blob/main/501d17c7-0998-4e2c-9047-c51ece9f9fce.jpg?raw=true)
 
 ## 🚀 About Mudra AI
 Mudra AI is an AI-powered Indian Sign Language (ISL) learning app that leverages real-time gesture recognition and AI-driven feedback to provide an interactive and personalized learning experience. It aims to bridge communication gaps by offering gamified quizzes and conversational practice, empowering mute individuals and promoting ISL adoption.
