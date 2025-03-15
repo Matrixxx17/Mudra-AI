@@ -39,7 +39,7 @@ Feature Image:
 ## 🔧 Installation & Setup
 1. Clone the repository:
    sh
-   git clone https://github.com/your-repo-url.git
+   git clone https://github.com/Matrixxx17/Mudra-AI.git
    cd MudraAI
    
 2. Install dependencies:
